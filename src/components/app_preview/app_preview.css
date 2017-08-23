@@ -1,0 +1,26 @@
+.c-app-preview {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	margin: 3rem 0;
+	padding: 0 40px;
+}
+
+.c-app-preview--left {
+	
+}
+
+.c-app-preview--right {
+	
+}
+
+.c-app-preview--title {
+}
+
+.c-app-preview--description {
+	margin: 2rem 0;
+}
+
+.c-app-preview--buttons {
+	margin-top: 3rem;
+}

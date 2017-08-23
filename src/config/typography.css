@@ -1,0 +1,12 @@
+:root {
+	--font-root: Helvetica Neue, Helvetica, Arial, sans-serif;
+	
+	--font-size-t1: 3rem;
+	--line-height-t1: 3.8rem;
+	
+	--font-size-t2: 2.5rem;
+	--line-height-t2: 3.5rem;
+	
+	--font-size-t3: 1.5rem;
+	--line-height-t3: 2.25rem;
+}

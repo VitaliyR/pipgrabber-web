@@ -1,0 +1,10 @@
+:root {
+	--body-bg: #f9f9f9;
+	--color-text-primary: #222;
+	--color-text-description: #999;
+	--color-text-accent: #fff;
+	
+	--bg-accent: #59c4f8;
+	--bg-accent-darker: #28b3f6;
+	--bg-accent-darkest: #009eea;
+}

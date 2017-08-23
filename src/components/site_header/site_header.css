@@ -1,0 +1,25 @@
+.c-site-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 1.5rem 0;
+	padding: 0 40px;
+}
+
+.c-site-header--left {
+	
+}
+
+.c-site-header--right {
+	
+}
+
+.c-site-header--logo {
+	width: 40px;
+	height: 40px;
+	vertical-align: middle;
+}
+
+.c-site-header--name {
+	vertical-align: middle;
+}

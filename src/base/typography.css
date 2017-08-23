@@ -1,0 +1,14 @@
+.t1 {
+	font-size: var(--font-size-t1);
+	line-height: var(--line-height-t1);
+}
+
+.t2 {
+	font-size: var(--font-size-t2);
+	line-height: var(--line-height-t2);
+}
+
+.t3 {
+	font-size: var(--font-size-t3);
+	line-height: var(--line-height-t3);
+}
