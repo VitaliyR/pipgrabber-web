@@ -4,5 +4,5 @@
 .c-block-header--title {
 	text-align: center;
 	color: var(--bg-accent);
-	margin: 50px 0;
+	padding: 50px 0;
 }

@@ -33,3 +33,12 @@
 		box-shadow: initial;
 	}
 }
+
+.c-button__bordered {
+	background-color: transparent;
+	color: var(--bg-accent);
+	
+	&:hover {
+		color: var(--color-text-accent);
+	}
+}

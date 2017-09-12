@@ -1,8 +1,14 @@
 .c-app-preview {
+	height: 100vh;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+}
+
+.c-app-preview--container {
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: center;
-	margin: 3rem 0;
 	padding: 0 40px;
 }
 
@@ -23,4 +29,16 @@
 
 .c-app-preview--buttons {
 	margin-top: 3rem;
+}
+
+.c-app-preview--footer {
+	text-align: center;
+	margin: 1.5rem 0;
+	will-change: opacity;
+	transition: .5s opacity;
+}
+
+.c-app-preview--footer-link {
+	font-size: .85rem;
+	color: var(--color-text-description);
 }

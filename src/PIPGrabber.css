@@ -1,11 +1,13 @@
-@import 'config/variables';
-@import 'config/typography';
-@import 'config/colors';
+@import 'css/config/variables';
+@import 'css/config/typography';
+@import 'css/config/colors';
 
-@import 'base/base';
-@import 'base/typography';
+@import 'css/base/base';
+@import 'css/base/typography';
 
-@import 'layouts/layouts';
+@import 'css/utilities/utilities';
+
+@import 'css/layouts/layouts';
 
 @import 'components/button/button';
 

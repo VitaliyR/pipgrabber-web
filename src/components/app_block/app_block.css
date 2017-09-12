@@ -26,3 +26,7 @@
 .c-app-block--description {
 	margin: 30px 0;
 }
+
+.c-app-block--image {
+	max-width: 100%;
+}
