@@ -1,8 +1,11 @@
-.c-block-header {
+.c-block-header--title {
+  text-align: center;
+  color: var(--bg-accent);
+  padding: 30px 0;
 }
 
-.c-block-header--title {
-	text-align: center;
-	color: var(--bg-accent);
-	padding: 50px 0;
+@media (--phone) {
+  .c-block-header--title {
+    padding: var(--container-padding-phone) 0;
+  }
 }

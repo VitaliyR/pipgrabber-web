@@ -1,4 +1,15 @@
 .l-site-container {
-	max-width: 1200px;
-	margin: 0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.l-content {
+  padding: 0 40px;
+  margin: 0 auto;
+}
+
+@media (--phone) {
+  .l-content {
+    padding: 0 var(--container-padding-phone);
+  }
 }

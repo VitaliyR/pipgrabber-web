@@ -1,3 +1,8 @@
 :root {
-	--container-padding: 20px;
+  --container-padding: 40px;
+  --container-padding-phone: 20px;
+
+  @custom-media --desktop (max-width: 1000px);
+  @custom-media --tablet (max-width: 720px);
+  @custom-media --phone (max-width: 420px);
 }

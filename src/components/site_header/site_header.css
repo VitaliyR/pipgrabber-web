@@ -1,25 +1,42 @@
-.c-site-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin: 1.5rem 0;
-	padding: 0 40px;
-}
+@custom-media --menu-width (max-width: 600px);
 
-.c-site-header--left {
-	
+.c-site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+  padding: 0 var(--container-padding);
+  position: relative;
 }
 
 .c-site-header--right {
-	
+  flex: 1;
+  text-align: right;
 }
 
 .c-site-header--logo {
-	width: 40px;
-	height: 40px;
-	vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
 }
 
 .c-site-header--name {
-	vertical-align: middle;
+  vertical-align: middle;
+}
+
+@media (--menu-width) {
+  .c-site-header--right {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    right: 0;
+    padding: 0 20px;
+    text-align: center;
+  }
+}
+
+@media (--phone) {
+  .c-site-header {
+    padding: 0 var(--container-padding-phone);
+  }
 }

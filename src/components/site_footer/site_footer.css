@@ -1,0 +1,25 @@
+@custom-media --footer-width (max-width: 450px);
+
+.c-site-footer {
+  background: linear-gradient(180deg, var(--bg-silver) 0%, #fff 100%);
+  border-top: 1px solid var(--border-accent);
+  line-height: 1.5rem;
+  height: 80px;
+  padding: 30px 40px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+@media (--footer-width) {
+  .c-site-footer {
+    height: auto;
+    flex-flow: column nowrap;
+    text-align: center;
+    padding: var(--container-padding-phone);
+  }
+
+  .c-site-footer--item {
+    margin: 3px 0;
+  }
+}

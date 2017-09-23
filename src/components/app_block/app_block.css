@@ -1,32 +1,54 @@
 .c-app-block {
-	display: flex;
-	flex-flow: row nowrap;
-	align-items: center;
-	margin: 50px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin: 50px 0;
 }
 
 .c-app-block__reversed {
-	flex-flow: row-reverse nowrap;
-	
-	& .c-app-block--right {
-		text-align: left;
-	}
+  flex-flow: row-reverse nowrap;
+
+  & .c-app-block--right {
+    text-align: left;
+  }
 }
 
 .c-app-block--left {
-	flex: 2 0;
-	text-align: center;
+  flex: 2 0;
+  text-align: center;
+}
+
+.c-app-block--content {
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 .c-app-block--right {
-	flex: 1 0;
-	text-align: right;
+  flex: 1 0;
+  text-align: right;
 }
 
 .c-app-block--description {
-	margin: 30px 0;
+  margin: 30px 0;
 }
 
 .c-app-block--image {
-	max-width: 100%;
+  max-width: 100%;
+}
+
+@media (--phone) {
+  .c-app-block,
+  .c-app-block__reversed {
+    flex-flow: column-reverse nowrap;
+    margin: 25px 0;
+  }
+
+  .c-app-block--content {
+    max-width: initial;
+    padding: var(--container-padding-phone);
+  }
+
+  .c-app-block--description {
+    margin: 15px 0;
+  }
 }

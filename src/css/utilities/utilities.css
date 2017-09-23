@@ -1,8 +1,16 @@
 .u-v-hidden {
-	opacity: 0;
+  opacity: 0;
 }
 
 .u-v-no-animations {
-	animation: initial;
-	transition: initial;
+  animation: initial;
+  transition: initial;
+}
+
+.u-no-margin-around:first-child {
+  margin-top: 0;
+}
+
+.u-no-margin-around:last-child {
+  margin-bottom: 0;
 }

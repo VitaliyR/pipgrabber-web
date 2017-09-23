@@ -1,0 +1,26 @@
+.c-notes-block {
+  margin: 40px 0;
+  color: var(--color-text-primary);
+  font-size: 1.3rem;
+}
+
+.c-notes-block--header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.c-notes-block--title {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.c-notes-block--date {
+  color: var(--color-text-description);
+  font-size: .85rem;
+}
+
+.c-notes-block--item {
+  line-height: 2rem;
+  margin: 5px 0;
+}

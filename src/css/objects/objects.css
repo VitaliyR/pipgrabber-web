@@ -1,0 +1,11 @@
+.o-text-link {
+  transition: all .5s;
+  will-change: border, color;
+  border-bottom: 1px solid transparent;
+  color: var(--color-text-description);
+}
+
+.o-text-link:hover {
+  border-bottom: 1px solid var(--color-text-description);
+  color: var(--color-text-primary);
+}

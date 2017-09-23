@@ -1,0 +1,21 @@
+<li class="c-request-feature--item" data-id="{{id}}" data-voted="{{isVoted}}" data-votes="{{votes}}" data-done="{{done}}">
+  <div class="c-request-feature--info">
+    <a class="c-button {{#unless isVoted}}{{#unless done}}c-button__bordered{{/unless}}{{/unless}} {{#if done}}c-button__disabled{{/if}} c-request-feature--vote">
+      {{#if done}}
+      Done
+      {{else}}
+      {{#if isVoted}}
+      Voted
+      {{else}}
+      Vote
+      {{/if}}
+      {{/if}}
+    </a>
+    <div class="c-request-feature--votes">
+      Votes: {{votes}}
+    </div>
+  </div>
+  <div class="c-request-feature--name">
+    {{name}}
+  </div>
+</li>

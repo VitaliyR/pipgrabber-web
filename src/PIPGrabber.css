@@ -1,17 +1,16 @@
 @import 'css/config/variables';
 @import 'css/config/typography';
 @import 'css/config/colors';
-
 @import 'css/base/base';
 @import 'css/base/typography';
-
 @import 'css/utilities/utilities';
-
 @import 'css/layouts/layouts';
-
 @import 'components/button/button';
-
+@import 'css/objects/objects';
 @import 'components/site_header/site_header';
 @import 'components/app_preview/app_preview';
 @import 'components/app_block/app_block';
 @import 'components/block_header/block_header';
+@import 'components/notes_block/notes_block';
+@import 'components/request_feature/request_feature';
+@import 'components/site_footer/site_footer';
