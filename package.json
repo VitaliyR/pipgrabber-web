@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/stylelint ./src/**/*.css && ./node_modules/.bin/eslint ./src/**/*.js",
-    "build": "webpack",
+    "build": "./node_modules/.bin/webpack -p",
     "start": "node ./src/core/index.js"
   },
   "author": "Vitaliy Ribachenko <vit@ribachenko.com>",
@@ -34,6 +34,7 @@
     "postcss-import": "^10.0.0",
     "postcss-loader": "^2.0.6",
     "style-loader": "^0.18.2",
+    "stylelint": "^8.1.1",
     "stylelint-config-standard": "^17.0.0",
     "stylelint-webpack-plugin": "^0.9.0",
     "webpack": "^3.6.0"
