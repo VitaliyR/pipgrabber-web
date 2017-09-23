@@ -3,3 +3,5 @@ dist/
 .DS_Store
 config.js
 content/
+cast.xml
+versions/
