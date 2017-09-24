@@ -11,6 +11,7 @@ const storage = {
   },
 
   async retrieve() {
+    let isEmpty = false;
     let data;
 
     try {
@@ -23,9 +24,14 @@ const storage = {
         features: {},
         votes: {}
       };
+      isEmpty = true;
     }
 
     this.data = data;
+
+    if (isEmpty) {
+      await this.persist();
+    }
 
     return data;
   },
