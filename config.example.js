@@ -1,4 +1,4 @@
 module.exports = {
-	storage: './content/data.json',
-	port: 3010
+  storage: './content/data.json',
+  port: 3010
 };
