@@ -10,6 +10,10 @@ const utilities = require('./lib/utilities');
 
 const app = new Koa();
 
+if (process.env.NODE_ENV === 'production') {
+  log.notifications = false;
+}
+
 app.use(utilities);
 app.use(storage(config));
 

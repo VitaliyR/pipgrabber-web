@@ -1,4 +1,4 @@
-const fs = require('await-fs');
+const fs = require('./fs');
 const path = require('path');
 const process = require('process');
 const log = require('./log')('Storage');
@@ -19,7 +19,7 @@ const storage = {
       data = JSON.parse(data);
       log.info('Retrieved');
     } catch (e) {
-      log.error('Could not find data file');
+      log.error('Could not find data file.', e);
       data = {
         features: {},
         votes: {}
@@ -41,8 +41,13 @@ const storage = {
   */
   async persist() {
     if (this.data) {
-      fs.writeFile(this.getFilePath(), JSON.stringify(this.data));
-      log.info('Persisted');
+      try {
+        await fs.writeFile(this.getFilePath(), JSON.stringify(this.data), 'utf-8');
+        log.info('Persisted');
+      } catch (e) {
+        log.error('Could not write data file. ', e);
+        throw e;
+      }
     } else {
       log.warn('Nothing readed before - nothing persist now');
     }
@@ -55,9 +60,14 @@ const storage = {
 module.exports = function Storage(config) {
   storageFile = config.storage;
 
-  storage.retrieve();
-
-  return function StorageWrapper(ctx, next) {
+  return async function StorageWrapper(ctx, next) {
+    if (!storage.data) {
+      try {
+        await storage.retrieve();
+      } catch (e) {
+        log.error(e);
+      }
+    }
     Object.assign(ctx, { storage });
     return next();
   };

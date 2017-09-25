@@ -4,14 +4,13 @@
   "description": "Website of the PIPGrabber application",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/stylelint ./src/**/*.css && ./node_modules/.bin/eslint ./src/**/*.js",
+    "test": "./node_modules/.bin/stylelint ./src/**/*.css && ./node_modules/.bin/eslint ./src",
     "build": "./node_modules/.bin/webpack -p",
     "start": "node ./src/core/index.js"
   },
   "author": "Vitaliy Ribachenko <vit@ribachenko.com>",
   "license": "MIT",
   "dependencies": {
-    "await-fs": "^1.0.0",
     "class.extend": "^0.9.2",
     "handlebars": "^4.0.10",
     "handlebars-loader": "^1.6.0",
