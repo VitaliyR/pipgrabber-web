@@ -1,5 +1,5 @@
 module.exports = {
+  port: 3010,
   storage: './content/data.json',
-  appFile: '/versions/pipgrabber.dmg',
-  port: 3010
+  appDir: './versions/'
 };
