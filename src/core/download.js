@@ -34,9 +34,9 @@ async function downloadVersion(ctx) {
     let downloadsForVersion = downloads[version] || 0;
     downloadsForVersion += 1;
     downloads[version] = downloadsForVersion;
+  } else {
+    downloads.total += 1;
   }
-
-  downloads.total += 1;
 
   await ctx.storage.persist();
 
