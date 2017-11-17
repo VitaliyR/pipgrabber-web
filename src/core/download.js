@@ -14,8 +14,14 @@ function getFileName(ctx, version) {
   return path.join(ctx.config.appDir, fileName);
 }
 
-async function download(ctx, version) {
-  let downloads = ctx.storage.data.downloads;
+/**
+ * Increments counter of downloads and initiates download
+ * @param {Object} ctx context
+ * @return {Promise}
+ */
+async function downloadVersion(ctx) {
+  const { version } = ctx.params;
+  let { downloads } = ctx.storage.data;
 
   if (!downloads) {
     downloads = {
@@ -24,43 +30,45 @@ async function download(ctx, version) {
     ctx.storage.data.downloads = downloads;
   }
 
-  let downloadsForVersion = downloads[version]; // todo
-}
+  if (version) {
+    let downloadsForVersion = downloads[version] || 0;
+    downloadsForVersion += 1;
+    downloads[version] = downloadsForVersion;
+  }
 
-/**
- * Increments counter of downloads and initiates download
- * @param {Object} ctx context
- * @return {Promise}
- */
-async function downloadLatestVersion(ctx) {
-  let downloadCount = ctx.storage.data.downloads || 0;
-
-  downloadCount += 1;
-  ctx.storage.data.downloads = downloadCount;
-  log.info(`New download, now we have ${downloadCount}`);
+  downloads.total += 1;
 
   await ctx.storage.persist();
 
-  const fileName = getFileName(ctx);
+  log.info(`New download, now we have ${downloads.total}`);
 
-  ctx.attachment(fileName);
-  ctx.body = fs.createReadStream(fileName);
+  ctx.attachment(path.basename(ctx.versionFileName));
+  ctx.body = fs.createReadStream(ctx.versionFileName);
 }
 
-async function downloadVersion(ctx) {
+/**
+ * Checks if there are provided version
+ * @param {Object} ctx context
+ * @param {Function} [next=] next middleware function
+ */
+async function checkVersion(ctx, next) {
+  const { version } = ctx.params;
+  const fileName = getFileName(ctx, version);
+  const isVersionExists = await fs.exists(fileName);
 
-}
-
-async function checkVersion(ctx) {
-  const version = ctx.params.version;
-  ctx.isVersionExists = await fs.exists // todo
-  return ctx.next();
+  if (isVersionExists) {
+    ctx.versionFileName = fileName;
+    await next();
+  } else {
+    log.info(`Tried to request ${version || 'latest'} but didn't found`);
+    ctx.throw(404);
+  }
 }
 
 /**
  * Routes
  */
-router.get('/download', downloadLatestVersion);
+router.get('/download', checkVersion, downloadVersion);
 router.get('/download/:version', checkVersion, downloadVersion);
 
 /**
