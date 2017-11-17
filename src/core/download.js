@@ -43,7 +43,7 @@ async function downloadVersion(ctx) {
   log.info(`New download, now we have ${downloads.total}`);
 
   ctx.attachment(path.basename(ctx.versionFileName));
-  ctx.body = fs.createReadStream(ctx.versionFileName);
+  ctx.body = fs.createReadStreamOriginal(ctx.versionFileName);
 }
 
 /**

@@ -14,6 +14,8 @@ const handler = methodName => (...params) => new Promise((res, rej) => {
 
 module.exports = new Proxy(fs, {
   get(_, method) {
-    return fs[method] && handler(method);
+    const methodName = method.split('Original')[0];
+    const isOriginal = methodName !== method;
+    return isOriginal ? fs[methodName] : (fs[method] && handler(method));
   }
 });
