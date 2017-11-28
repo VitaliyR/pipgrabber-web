@@ -3,7 +3,7 @@ const fs = require('fs');
 const handler = methodName => (...params) => new Promise((res, rej) => {
   fs[methodName](...params, (e, d) => {
     if (typeof d === 'undefined') {
-      return res(e);
+      return e instanceof Error ? rej(e) : res(e);
     }
     if (e) {
       return rej(e);

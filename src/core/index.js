@@ -5,9 +5,11 @@ const path = require('path');
 const config = require('../../config');
 const log = require('./lib/log')('App');
 const storage = require('./lib/storage');
+const utilities = require('./lib/utilities');
+
 const featuresController = require('./features');
 const downloadController = require('./download');
-const utilities = require('./lib/utilities');
+const dataController = require('./data');
 
 const app = new Koa();
 
@@ -36,6 +38,7 @@ app.use(renderer(path.join(__dirname, '../templates'), {
 
 app.use(featuresController.routes());
 app.use(downloadController.routes());
+app.use(dataController.routes());
 app.use(serve(path.join(__dirname, '../../dist')));
 
 if (!module.parent) {
