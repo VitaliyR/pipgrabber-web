@@ -1,6 +1,6 @@
 const router = require('koa-router')();
 const log = require('./lib/log')('DownloadController');
-const fs = require('./lib/fs');
+const fs = require('fs-fs');
 const path = require('path');
 
 /**
@@ -43,7 +43,7 @@ async function downloadVersion(ctx) {
   log.info(`New download, now we have ${downloads.total}`);
 
   ctx.attachment(path.basename(ctx.versionFileName));
-  ctx.body = fs.createReadStreamOriginal(ctx.versionFileName);
+  ctx.body = fs.native.createReadStream(ctx.versionFileName);
 }
 
 /**

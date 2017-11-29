@@ -1,6 +1,6 @@
 const router = require('koa-router')();
 const log = require('./lib/log')('DataController');
-const fs = require('./lib/fs');
+const fs = require('fs-fs');
 
 /**
  * Retrieve links

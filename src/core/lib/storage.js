@@ -1,4 +1,4 @@
-const fs = require('./fs');
+const fs = require('fs-fs');
 const path = require('path');
 const process = require('process');
 const log = require('./log')('Storage');
