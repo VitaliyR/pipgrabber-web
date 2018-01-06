@@ -42,8 +42,11 @@ async function downloadVersion(ctx) {
 
   log.info(`New download, now we have ${downloads.total}`);
 
+  const fileStats = await fs.stat(ctx.versionFileName);
+
   ctx.attachment(path.basename(ctx.versionFileName));
   ctx.body = fs.native.createReadStream(ctx.versionFileName);
+  ctx.response.length = fileStats.size;
 }
 
 /**
